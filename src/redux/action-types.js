@@ -1,0 +1,9 @@
+const actionTypes = {
+    SET_MOVIES: 'SET_MOVIES',
+    SET_SELECTED_YEAR: 'SET_SELECTED_YEAR',
+    SET_SELECTED_GENRES: 'SET_SELECTED_GENRES',
+    SET_GENRES: 'SET_GENRES',
+    SET_LIST_VIEW: 'SET_LIST_VIEW',
+    SET_MOVIE: 'SET_MOVIE',
+}
+export default actionTypes;
