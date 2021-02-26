@@ -1,5 +1,4 @@
 
-import Navbar from "../Navbar/Navbar";
 import Table from 'react-bootstrap/Table';
 
 
@@ -9,7 +8,6 @@ function Tickets (props){
         return <>
         <div className="container">
             <div className="row">
-            <Navbar/>  
             <img src="https://i.ibb.co/wQcP09R/ticket.png" alt="ticket" width="100%" fluid  className="mt-2"/>
             <Table striped bordered hover variant="dark">
   <thead>

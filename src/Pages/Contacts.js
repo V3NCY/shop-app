@@ -1,14 +1,14 @@
-import ContactForm from '../contact/ContactForm';
-import Navbar from "../Navbar/Navbar";
+import ContactForm from "../contact/ContactForm";
 
-function Contacts (props) {
-    return <>
-        <div className="container">
-            <div className="row">
-                <Navbar/>
-                < ContactForm/>
-            </div>
+function Contacts(props) {
+  return (
+    <>
+      <div className="container">
+        <div className="row">
+          <ContactForm />
         </div>
+      </div>
     </>
+  );
 }
 export default Contacts;
