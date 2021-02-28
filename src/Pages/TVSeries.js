@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Intro from "../Serie/components/Intro";
-import SeriesList from "../Serie/components/SeriesList";
-import Loader from "../Serie/components/Loader";
+import SeriesList from "../TVSeries/components/SeriesList";
+import Loader from "../TVSeries/components/Loader";
+import Intro from "../TVSeries/components/Intro";
 
 class Series extends Component {
   state = {
@@ -10,36 +10,47 @@ class Series extends Component {
     isFetching: false,
   };
 
-  onSeriesInputChange = (e) => {
-    this.setState({ seriesName: e.target.value, isFetching: false });
+  componentDidMount() {}
 
-    fetch(`http://api.tvmaze.com/search/shows?q=${e.target.value}`)
+  onSeriesInputChange = (e) => {
+    this.setState({ seriesName: e.target.value, isFetching: true });
+
+    fetch(`https://api.tvmaze.com/search/shows?q=${e.target.value}`)
       .then((response) => response.json())
-      .then((json) => this.setState({ series: json, isFetching: false }));
+      .then((json) => {
+        this.setState({ series: json, isFetching: false });
+      });
   };
 
   render() {
     const { series, seriesName, isFetching } = this.state;
-
     return (
-      <div>
-        <Intro message="Your favorite TV Series are here!!!" />
-        <div>
-          <input
-            value={seriesName}
-            type="text"
-            onChange={this.onSeriesInputChange}
-          />
+      <div className="container">
+        <header>
+          <h1>TV Series </h1>
+        </header>
+        <div className="row">
+          <div className="col">
+            <Intro message="All TV Series" />
+            <input
+              value={seriesName}
+              type="text"
+              onChange={this.onSeriesInputChange}
+            />
+          </div>
         </div>
-        {!isFetching && series.length === 0 && seriesName.trim() === "" && (
-          <p>Please enter a name...</p>
-        )}
-        {!isFetching && series.length === 0 && seriesName.trim() !== "" && (
-          <p>No TV Series have been found...</p>
-        )}
-        {isFetching && <Loader />}
-        {!isFetching && <SeriesList list={this.state.series} />}
+        <div className="col">
+          {!isFetching && series.length === 0 && seriesName.trim() === "" && (
+            <p>Please enter a name...</p>
+          )}
+          {!isFetching && series.length === 0 && seriesName.trim() !== "" && (
+            <p>No TV Series have been found!</p>
+          )}
+          {isFetching && <Loader />}
+          {!isFetching && <SeriesList list={this.state.series} />}
+        </div>
       </div>
+      
     );
   }
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Col,
   Button,
   Form,
   FormGroup,
@@ -10,7 +9,6 @@ import {
   Card,
   CardBody,
 } from "reactstrap";
-
 
 const FormInput = (props) => {
   return (

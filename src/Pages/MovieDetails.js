@@ -28,6 +28,7 @@ function MovieDetails(props) {
     return () => {
       dispatch(setMovie({}));
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getMovieImage = () => {

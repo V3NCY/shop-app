@@ -8,16 +8,14 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "./redux/reducers";
 import * as serviceWorker from "./serviceWorker";
-import {BrowserRouter} from "react-router-dom";
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
+  
   <React.Fragment>
     <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <App />
     </Provider>
   </React.Fragment>,
   document.getElementById("root")
