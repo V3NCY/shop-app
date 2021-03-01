@@ -3,7 +3,8 @@ import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 const Orders = (props) => {
   return (
-    <div className="container p-5">
+    <div className="container">
+      <h1>Orders</h1>
       <Form>
         <Row form>
           <Col md={6}>

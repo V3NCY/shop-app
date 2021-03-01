@@ -7,10 +7,10 @@ import Movies from "./Pages/Movies";
 import MovieDetails from "./Pages/MovieDetails";
 import Orders from "./Pages/Orders";
 import TVSeries from "./Pages/TVSeries";
-import Series from "./Pages/TVSeries";
-import SingleSeries from "./TVSeries/containers/singleSeries";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Tickets from "./Pages/Tickets";
+import SingleSeries from "./TvSeries/SingleSeries";
+// import Series from "./Pages/TVSeries";
 
 const routes = [
   {
@@ -32,7 +32,7 @@ const routes = [
     ),
   },
   {
-    path: "/tvseries",
+    path: "/series",
     main: () => (
       <MainLayout>
         <TVSeries></TVSeries>
@@ -96,12 +96,9 @@ function App() {
   return (
     <Router>
       <Switch>{getRoutes()}</Switch>
-      <div className="container">
-        <Switch>
-          <Route exact path="/" component={Series} />
-          <Route path="/tvseries/:id" component={SingleSeries} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/series/:id" component={SingleSeries} />
+      </Switch>
     </Router>
   );
 }

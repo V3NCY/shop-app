@@ -38,7 +38,7 @@ const Example = (props) => {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to="/tvseries">
+              <NavLink tag={Link} to="/series">
                 TV Series
               </NavLink>
             </NavItem>

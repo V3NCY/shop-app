@@ -10,6 +10,7 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
+  Button,
 } from "reactstrap";
 import constants from "../constants";
 
@@ -60,6 +61,9 @@ function MovieDetails(props) {
                     <CardText className="movie-description">
                       {movie.overview}
                     </CardText>
+                    <Button color="danger" href="/movies">
+                      Go back
+                    </Button>
                   </CardBody>
                 </div>
               </div>
