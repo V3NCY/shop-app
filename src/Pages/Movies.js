@@ -64,6 +64,7 @@ function Movies(props) {
   };
   return (
     <>
+      <h1>Movies</h1>
       <div className="container">
         <Filters />
         <div className="row">

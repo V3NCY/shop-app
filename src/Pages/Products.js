@@ -75,6 +75,7 @@ function Products(props) {
   };
   return (
     <>
+      <h1>Products</h1>
       <div className="container">
         <div className="row">{getProducts()}</div>
       </div>

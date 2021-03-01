@@ -20,7 +20,7 @@ const items = [
     src:
       "https://crushingfilm.files.wordpress.com/2018/04/black-panther-poster-title.jpg",
     altText: "Slide 3",
-    header: "ENERGY",
+    header: "EXPERIENCE",
     key: "3",
   },
 ];
